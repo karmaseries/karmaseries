@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KarmaSeries PDF</title>
+    <title>KarmaSeries</title>
     <link rel="icon" href="img/icons8-fairy-color-72.png" type="image/x-icon">
     <style>
         body, html {
@@ -16,18 +16,15 @@
             justify-content: center;
             overflow: hidden;
         }
-        .pdf-container {
+        .full-screen {
             width: 100vw;
             height: 100vh;
+            background: url('indizio2.png') no-repeat center center;
+            background-size: cover;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-        }
-        iframe {
-            width: 90%;
-            height: 90%;
-            border: none;
         }
         .star {
             position: absolute;
@@ -52,9 +49,7 @@
     </style>
 </head>
 <body>
-    <div class="pdf-container" onclick="createMagic(event)">
-        <iframe src="indizio2.pdf"></iframe>
-    </div>
+    <a href="#" class="full-screen" onclick="createMagic(event)"></a>
     <script>
         function createMagic(event) {
             event.preventDefault();
