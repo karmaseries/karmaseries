@@ -50,7 +50,26 @@
     </style>
 </head>
 <body>
-    <a href="https://en.wikipedia.org/wiki/Fairy" class="full-screen"></a>
-    
+    <a href="https://en.wikipedia.org/wiki/Fairy" class="full-screen"onclick="createMagic(event)"></a>
+    <script>
+        function createMagic(event) {
+            event.preventDefault();
+            for (let i = 0; i < 10; i++) {
+                let star = document.createElement('div');
+                star.className = 'star';
+                document.body.appendChild(star);
+                
+                let x = event.clientX + (Math.random() * 80 - 40);
+                let y = event.clientY + (Math.random() * 80 - 40);
+                
+                star.style.left = `${x}px`;
+                star.style.top = `${y}px`;
+                
+                setTimeout(() => {
+                    star.remove();
+                }, 1500);
+            }
+        }
+    </script>
 </body>
 </html>
