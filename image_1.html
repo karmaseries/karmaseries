@@ -50,7 +50,7 @@
     </style>
 </head>
 <body>
-    <a href="#" class="full-screen" onclick="createMagic(event)"></a>
+     <a class="full-screen"onclick="createMagic(event)"></a>
     <script>
         function createMagic(event) {
             event.preventDefault();
@@ -59,16 +59,17 @@
                 star.className = 'star';
                 document.body.appendChild(star);
                 
-                let x = event.clientX + (Math.random() * 50 - 25);
-                let y = event.clientY + (Math.random() * 50 - 25);
+                let x = event.clientX + (Math.random() * 80 - 40);
+                let y = event.clientY + (Math.random() * 80 - 40);
                 
                 star.style.left = `${x}px`;
                 star.style.top = `${y}px`;
                 
                 setTimeout(() => {
                     star.remove();
-                }, 1000);
+                }, 1500);
             }
+             window.open("https://en.wikipedia.org/wiki/Fairy");
         }
     </script>
 </body>
