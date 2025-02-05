@@ -1,6 +1,37 @@
-<html>
-<title>
-karmaseries
-</title
-HOLAAA
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KarmaSeries</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .full-screen {
+            width: 100vw;
+            height: 100vh;
+            background: url('your-image.jpg') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @media (max-width: 768px) {
+            .full-screen {
+                background-size: contain;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="https://example.com" class="full-screen"></a>
+</body>
 </html>
