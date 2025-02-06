@@ -23,23 +23,17 @@
 
         .full-screen {
             position: relative;
-            width: 90vw;
-            max-width: 600px;
             border-radius: 2em;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            border: 5px solid transparent;
         }
 
         .full-screen img {
             width: 100%;
             height: auto;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: inherit;
         }
     
         .content {
