@@ -8,28 +8,25 @@
     <link rel="stylesheet" href="style/styles.css">
 </head>
 <body class="page-2">
-    <a class="full-screen" onclick="createMagic(event)"></a>
-    
+      <a class="full-screen" onclick="openMap()">
+        <img src="indizio3.png" alt="Indizio">
+    </a>
+    <button class="title-button" onclick="openMap()">Via Temperanza</button>
+    <div id="mapid"></div>
     <script>
-        function createMagic(event) {
-            event.preventDefault();
-            for (let i = 0; i < 10; i++) {
-                let star = document.createElement('div');
-                star.className = 'star';
-                document.body.appendChild(star);
-                
-                let x = event.clientX + (Math.random() * 80 - 40);
-                let y = event.clientY + (Math.random() * 80 - 40);
-                
-                star.style.left = `${x}px`;
-                star.style.top = `${y}px`;
-                
-                setTimeout(() => {
-                    star.remove();
-                }, 1500);
-            }
+        var map = L.map("mapid").setView([45.4905333, 9.2206105], 18.58);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; OpenStreetMap contributors",
+        }).addTo(map);
+        L.marker([45.4905333, 9.2206105])
+            .addTo(map)
+            .bindPopup("Via Temperanza")
+            .openPopup();
+
+        function openMap() {
             window.open("https://maps.app.goo.gl/z5jyNgrpcYZJdaud8");
         }
     </script>
+   
 </body>
 </html>
