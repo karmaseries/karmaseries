@@ -10,12 +10,17 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 </head>
 <body class="page-2">
+    <div class="image-container">
       <a class="full-screen" onclick="openMap()">
         <img src="indizio3.png" alt="Indizio">
     </a>
+    </div>
+    <div class="content">
     <button class="title-button" onclick="openMap()">Via Temperanza</button>
     <div id="mapid"></div>
+    </div>
     <script>
+    
         var map = L.map("mapid").setView([45.4905333, 9.2206105], 18.58);
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             attribution: "&copy; OpenStreetMap contributors",
