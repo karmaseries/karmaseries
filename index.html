@@ -11,11 +11,15 @@
    
 </head>
 <body class="page-0">
+     <div class="image-container">
     <a class="full-screen" onclick="openMap()">
         <img src="indizio1.png" alt="Indizio">
     </a>
+     </div>
+    <div class="content">
     <button class="title-button" onclick="openMap()">Milano Porta Venezia</button>
     <div id="mapid"></div>
+    </div>
     <script>
         var map = L.map("mapid").setView([45.4747388, 9.2048744], 18.58);
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
