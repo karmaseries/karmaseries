@@ -1,99 +1,75 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    background-color: black;
-}
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+        }
 
-/* Impostazioni di base per .full-screen */
-.full-screen {
-  position: relative; /* Necessario per posizionare lo pseudo-elemento */
-  width: 80vw;
-  height: 80vh;
-  border-radius: 2em;
-  overflow: hidden;  /* Assicura che il bordo animato non fuoriesca */
-  /* Nota: evita di ridefinire il background qui se usi le classi .page-X per le immagini */
-}
+        .full-screen {
+            position: relative;
+            width: 80vw;
+            height: 80vh;
+            border-radius: 2em;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: 5px solid transparent;
+        }
 
-/* Pseudo-elemento per il bordo animato */
-.full-screen::before {
-  content: "";
-  position: absolute;
-  top: -5px;    /* Regola questo valore in base allo spessore del bordo desiderato */
-  left: -5px;
-  right: -5px;
-  bottom: -5px;
-  background: linear-gradient(45deg, #08f, #f03, #08f);
-  background-size: 300% 300%;
-  border-radius: inherit; /* Rispettare lo stesso raggio di curvatura */
-  z-index: -1;  /* Posiziona il bordo dietro il contenuto */
-  animation: animatedBorder 3s linear infinite;
-}
+        .full-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: inherit;
+        }
 
-/* Keyframes per animare lo sfondo del bordo */
-@keyframes animatedBorder {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
+        .full-screen::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #08f, #f03, #08f);
+            background-size: 300% 300%;
+            border-radius: inherit;
+            z-index: -1;
+            animation: animatedBorder 3s linear infinite;
+        }
 
-@property --border-angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 0turn;
-}
+        @keyframes animatedBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
 
-/* Definizione delle immagini di sfondo per ogni pagina */
-.page-0 .full-screen {
-    background: url('../indizio1.png') no-repeat center center;
-    background-size: contain;
-}
+        .title-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            color: gold;
+            font-size: 16px;
+            text-align: center;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            cursor: pointer;
+            background: linear-gradient(45deg, rgba(255,215,0,0.8), rgba(255,165,0,0.8));
+            transition: 0.3s;
+        }
 
-.page-1 .full-screen {
-    background: url('../indizio2.png') no-repeat center center;
-    background-size: contain;
-}
+        .title-button:hover {
+            background: linear-gradient(45deg, rgba(255,165,0,0.8), rgba(255,215,0,0.8));
+        }
 
-.page-2 .full-screen {
-    background: url('../indizio3.png') no-repeat center center;
-    background-size: contain;
-}
-
-.page-3 .full-screen {
-    background: url('../indizio4.png') no-repeat center center;
-    background-size: contain;
-}
-
-/* Effetto stelline */
-.star {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: yellow;
-    border-radius: 50%;
-    opacity: 0.8;
-    pointer-events: none;
-    animation: twinkle 1s linear;
-}
-
-@keyframes twinkle {
-    0% {
-        transform: scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(2);
-        opacity: 0;
-    }
-}
+        #mapid {
+            margin-top: 20px;
+            height: 60vh;
+            width: 80vw;
+            border-radius: 10px;
+        }
