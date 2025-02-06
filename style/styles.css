@@ -1,4 +1,15 @@
-    body, html {
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KarmaSeries</title>
+    <link rel="icon" href="img/icons8-fairy-color-72.png" type="image/x-icon">
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <style>
+        body, html {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -8,6 +19,7 @@
             flex-direction: column;
             align-items: center;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .image-container {
@@ -23,9 +35,7 @@
         .full-screen {
             position: relative;
             width: 90vw;
-            height: 90vh;
             max-width: 600px;
-            max-height: 80vh;
             border-radius: 2em;
             overflow: hidden;
             display: flex;
@@ -37,10 +47,10 @@
 
         .full-screen img {
             width: 100%;
-            height: 100%;
+            height: auto;
+            max-height: 90vh;
             object-fit: contain;
             border-radius: inherit;
-         
         }
 
         .full-screen::before {
@@ -70,6 +80,7 @@
             justify-content: center;
             width: 100%;
             padding: 20px;
+            transform: translateY(100vh);
         }
 
         .title-button {
