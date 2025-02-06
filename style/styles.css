@@ -13,7 +13,7 @@
         .full-screen {
             position: relative;
             width: 100vw;
-            height: 100vh;
+            height: 120vh;
             border-radius: 2em;
             overflow: hidden;
             display: flex;
@@ -28,26 +28,6 @@
             height: 100%;
             object-fit: contain;
             border-radius: inherit;
-        }
-
-        .full-screen::before {
-            content: "";
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            background: linear-gradient(45deg, #08f, #f03, #08f);
-            background-size: 300% 300%;
-            border-radius: inherit;
-            z-index: -1;
-            animation: animatedBorder 3s linear infinite;
-        }
-
-        @keyframes animatedBorder {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         .title-button {
