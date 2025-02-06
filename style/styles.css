@@ -10,47 +10,41 @@ body, html {
     background-color: black;
 }
 
+/* Impostazioni di base per .full-screen */
 .full-screen {
-     width: 80vw;
-    height: 80vh;
- 
-  display: grid;
-  place-content: center;
-  color: white;
-  text-shadow: 0 1px 0 #000;
-  
-  --border-angle: 0turn; // For animation.
-  --main-bg: conic-gradient(
-      from var(--border-angle),
-      #213,
-      #112 5%,
-      #112 60%,
-      #213 95%
-    );
-  
-  border: solid 5px transparent;
+  position: relative; /* Necessario per posizionare lo pseudo-elemento */
+  width: 80vw;
+  height: 80vh;
   border-radius: 2em;
-  --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
-  
-  background: 
-    // padding-box clip this background in to the overall element except the border.
-    var(--main-bg) padding-box,
-    // border-box extends this background to the border space
-    var(--gradient-border) border-box, 
-    // Duplicate main background to fill in behind the gradient border. You can remove this if you want the border to extend "outside" the box background.
-    var(--main-bg) border-box;
-  
-  background-position: center center;
+  overflow: hidden;  /* Assicura che il bordo animato non fuoriesca */
+  /* Nota: evita di ridefinire il background qui se usi le classi .page-X per le immagini */
+}
 
-  animation: bg-spin 3s linear infinite;
-  @keyframes bg-spin {
-    to {
-      --border-angle: 1turn;
-    }
+/* Pseudo-elemento per il bordo animato */
+.full-screen::before {
+  content: "";
+  position: absolute;
+  top: -5px;    /* Regola questo valore in base allo spessore del bordo desiderato */
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(45deg, #08f, #f03, #08f);
+  background-size: 300% 300%;
+  border-radius: inherit; /* Rispettare lo stesso raggio di curvatura */
+  z-index: -1;  /* Posiziona il bordo dietro il contenuto */
+  animation: animatedBorder 3s linear infinite;
+}
+
+/* Keyframes per animare lo sfondo del bordo */
+@keyframes animatedBorder {
+  0% {
+    background-position: 0% 50%;
   }
-
-  &:hover {
-    animation-play-state: paused;
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
