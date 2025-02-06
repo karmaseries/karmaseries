@@ -9,11 +9,11 @@ body, html {
             overflow: hidden;
             background-color: black;
         }
-        
-        .full-screen {
+
+        .page-0 .full-screen {
             width: 80vw;
             height: 80vh;
-            background: url('indizio1.png') no-repeat center center;
+            background: url('../indizio1.png') no-repeat center center;
             background-size: contain;
             position: relative;
             border-radius: 2em;
@@ -37,12 +37,96 @@ body, html {
             
             animation: border-spin 3s linear infinite;
         }
+        .page-1 .full-screen {
+            width: 80vw;
+            height: 80vh;
+            background: url('../indizio2.png') no-repeat center center;
+            background-size: contain;
+            position: relative;
+            border-radius: 2em;
+            padding: 10px;
+            
+            --border-angle: 0turn;
+            --main-bg: conic-gradient(
+                from var(--border-angle),
+                #213,
+                #112 5%,
+                #112 60%,
+                #213 95%
+            );
+            
+            border: solid 5px transparent;
+            --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+            background:
+                var(--main-bg) padding-box,
+                var(--gradient-border) border-box,
+                var(--main-bg) border-box;
+            
+            animation: border-spin 3s linear infinite;
+        }
+        .page-2 .full-screen {
+            width: 80vw;
+            height: 80vh;
+            background: url('../indizio3.png') no-repeat center center;
+            background-size: contain;
+            position: relative;
+            border-radius: 2em;
+            padding: 10px;
+            
+            --border-angle: 0turn;
+            --main-bg: conic-gradient(
+                from var(--border-angle),
+                #213,
+                #112 5%,
+                #112 60%,
+                #213 95%
+            );
+            
+            border: solid 5px transparent;
+            --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+            background:
+                var(--main-bg) padding-box,
+                var(--gradient-border) border-box,
+                var(--main-bg) border-box;
+            
+            animation: border-spin 3s linear infinite;
+        }
+
+        .page-3 .full-screen {
+            width: 80vw;
+            height: 80vh;
+            background: url('../indizio4.png') no-repeat center center;
+            background-size: contain;
+            position: relative;
+            border-radius: 2em;
+            padding: 10px;
+            
+            --border-angle: 0turn;
+            --main-bg: conic-gradient(
+                from var(--border-angle),
+                #213,
+                #112 5%,
+                #112 60%,
+                #213 95%
+            );
+            
+            border: solid 5px transparent;
+            --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+            background:
+                var(--main-bg) padding-box,
+                var(--gradient-border) border-box,
+                var(--main-bg) border-box;
+            
+            animation: border-spin 3s linear infinite;
+        }
+
         
         @keyframes border-spin {
             to {
                 --border-angle: 1turn;
             }
         }
+
         
         .star {
             position: absolute;
